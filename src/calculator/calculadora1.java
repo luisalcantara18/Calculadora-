@@ -66,6 +66,11 @@ public class calculadora1 extends javax.swing.JFrame {
         pantalla.setBounds(10, 40, 391, 50);
 
         jButton3.setText("+/-");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton3);
         jButton3.setBounds(100, 130, 60, 80);
         jPanel1.add(jButton4);
@@ -76,6 +81,11 @@ public class calculadora1 extends javax.swing.JFrame {
         jButton5.setBounds(220, 130, 60, 80);
 
         jButton7.setText("CE");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton7);
         jButton7.setBounds(100, 230, 60, 100);
 
@@ -114,6 +124,11 @@ public class calculadora1 extends javax.swing.JFrame {
         jButton13.setBounds(220, 530, 60, 100);
 
         jButton14.setText("C");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton14);
         jButton14.setBounds(40, 230, 60, 100);
 
@@ -227,7 +242,7 @@ public class calculadora1 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -324,6 +339,25 @@ public static boolean existepuento(String cadena){
         // TODO add your handling code here:
          pantalla.setText(pantalla.getText()+"0");
     }//GEN-LAST:event_jButton25ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+        String cadena;
+        cadena= pantalla.getText();
+        if(cadena.length()>0){
+            cadena = cadena.substring(0, cadena.length()-1);
+         pantalla.setText(cadena);
+        }
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        pantalla.setText("");
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
