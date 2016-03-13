@@ -259,7 +259,21 @@ public class calculadora1 extends javax.swing.JFrame {
         
       
     }//GEN-LAST:event_jButton26ActionPerformed
-
+public static boolean existepuento(String cadena){
+        boolean resultado ;
+        resultado =false;
+        for(int i =0; i < cadena.length(); i++){               //Object object =arr [i];
+           if(cadena.substring(i,1+1).equals(".")){
+               resultado= true;
+               break;
+               
+               
+           }
+        }
+        
+        return resultado;
+        
+    }
     private void jButton26AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jButton26AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton26AncestorAdded
