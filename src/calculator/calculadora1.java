@@ -63,7 +63,7 @@ public class calculadora1 extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
         jPanel1.add(pantalla);
-        pantalla.setBounds(10, 40, 391, 50);
+        pantalla.setBounds(10, 50, 300, 50);
 
         jButton3.setText("+/-");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -94,10 +94,20 @@ public class calculadora1 extends javax.swing.JFrame {
         jButton8.setBounds(40, 130, 60, 80);
 
         jButton9.setText("1/x");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton9);
         jButton9.setBounds(160, 230, 60, 100);
 
         jButton10.setText("/");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton10);
         jButton10.setBounds(220, 230, 60, 100);
 
@@ -120,6 +130,11 @@ public class calculadora1 extends javax.swing.JFrame {
         jButton12.setBounds(100, 330, 60, 100);
 
         jButton13.setText("+");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton13);
         jButton13.setBounds(220, 530, 60, 100);
 
@@ -142,6 +157,11 @@ public class calculadora1 extends javax.swing.JFrame {
         jButton15.setBounds(160, 330, 60, 100);
 
         jButton16.setText("x");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton16);
         jButton16.setBounds(220, 330, 60, 100);
 
@@ -173,10 +193,20 @@ public class calculadora1 extends javax.swing.JFrame {
         jButton19.setBounds(160, 430, 60, 100);
 
         jButton20.setText("-");
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton20);
         jButton20.setBounds(220, 430, 60, 100);
 
         jButton21.setText("=");
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton21);
         jButton21.setBounds(220, 630, 60, 60);
 
@@ -223,12 +253,12 @@ public class calculadora1 extends javax.swing.JFrame {
             }
         });
         jButton26.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jButton26AncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel1.add(jButton26);
@@ -238,13 +268,11 @@ public class calculadora1 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -359,6 +387,85 @@ public static boolean existepuento(String cadena){
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        if(!pantalla.getText().equals("")){
+            memoria1=pantalla.getText();
+            signo="+";
+            pantalla.setText("");
+        }
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        // TODO add your handling code here:
+         if(!pantalla.getText().equals("")){
+            memoria1=pantalla.getText();
+            signo="-";
+            pantalla.setText("");
+        }
+    }//GEN-LAST:event_jButton20ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+         if(!pantalla.getText().equals("")){
+            memoria1=pantalla.getText();
+            signo="*";
+            pantalla.setText("");
+        }
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+         if(!pantalla.getText().equals("")){
+            memoria1=pantalla.getText();
+            signo="/";
+            pantalla.setText("");
+        }
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        Double num;
+        String cadena;
+        cadena=pantalla.getText();
+        if(cadena.length()>0);
+           num=(-1)*Double.parseDouble(cadena);
+          pantalla.setText(num.toString());
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+        // TODO add your handling code here:
+         
+        String resultado; 
+        memoria2=pantalla.getText();
+        if(!memoria2.equals("")){
+            resultado= calculadora(memoria1,memoria2,signo);
+            pantalla.setText(resultado);
+        }
+    }//GEN-LAST:event_jButton21ActionPerformed
+public static String calculadora (String memoria1,String memoria2,String signo){
+        Double resultado =0.0;
+        String respuesta;
+    if(signo.equals("-")){
+        resultado= Double.parseDouble(memoria1)- Double.parseDouble(memoria2);
+        
+    }
+    if(signo.equals("+")){
+        resultado= Double.parseDouble(memoria1)+Double.parseDouble(memoria2);
+    }
+    if(signo.equals("*")){
+        resultado= Double.parseDouble(memoria1)* Double.parseDouble(memoria2);
+    }
+     if(signo.equals("/")){
+        resultado= Double.parseDouble(memoria1)/Double.parseDouble(memoria2);
+     }
+        respuesta=resultado.toString();
+        return respuesta;
+        
+    }
+    
+    
+    
     /**
      * @param args the command line arguments
      */
